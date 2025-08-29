@@ -117,7 +117,7 @@ Response:
 
 > Tip: Set your own env vars (`FULL_NAME`, `DOB_DDMMYYYY`, `EMAIL`, `ROLL_NUMBER`) before running to personalize the response.
 
-## 🌐 Deploy (Render — recommended)
+## 🌐 Deploy (Render)
 
 1. Push this folder to a new **public GitHub repo**.
 2. Create a **New Web Service** on [Render](https://render.com/), connect the repo.
@@ -129,14 +129,6 @@ Response:
    - `FULL_NAME`, `DOB_DDMMYYYY`, `EMAIL`, `ROLL_NUMBER`
 5. Once deployed, your endpoint will be:
    - `POST https://<your-service>.onrender.com/bfhl` (HTTP 200 on success)
-
-## 🌐 Deploy (Railway)
-
-1. Push to GitHub.
-2. On [Railway](https://railway.app/), create a new project → **Deploy from GitHub**.
-3. Set the **Start Command** to:  
-   `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. Add the same environment variables.
 
 ## 🧾 Notes
 - The service returns **HTTP 200** with `"is_success": true` on success. For unexpected errors, it returns a graceful JSON with `"is_success": false`.
