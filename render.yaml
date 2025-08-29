@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: vit-bfhl-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    plan: free
+    envVars:
+      - key: FULL_NAME
+        value: john doe
+      - key: DOB_DDMMYYYY
+        value: "17091999"
+      - key: EMAIL
+        value: john@xyz.com
+      - key: ROLL_NUMBER
+        value: ABCD123
+    autoDeploy: true
